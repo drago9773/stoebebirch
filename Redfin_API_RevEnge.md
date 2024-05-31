@@ -103,10 +103,24 @@ id | status
 ```
 ord=redfin-recommended-asc
 ```
+id | status
+---|---
+redfin|recommended-asc|Recom
+days-on-redfin-asc|Newest
+price-asc|Price (low to high)
+price-desc | Price (high to low)
+square-footage-desc | Square feet
+lot-sq-ft-desc | Lot size
+dollars-per-sq-ft-asc | Price/sq.ft.
+address-asc | Address
+location-asc | Location
+bed-desc | Beds
+bath-desc | Baths
+
 
 ### Unknown
 ```
-al=3
+al=1
 page_number=1
 sp=true
 v=8
