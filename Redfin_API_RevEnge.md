@@ -7,7 +7,6 @@ I've removed some specefics from the samples for privacy resons. you will need t
 **Acknoledgment**
 
 - This Document is an updated version of [alientechsw/REDFINPlus.md](https://github.com/alientechsw/RedfinPlus/blob/master/docs/REDFIN.md)
-- That Document is an updated version of [gomoto/house/REDFIN.md](https://github.com/gomoto/house/blob/master/REDFIN.md)
 
 ## APIs end points
 
