@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    overflow: hidden; /* Hide overflow to prevent scrolling beyond viewport */
+    overflow: hidden;
 }
 
 .header {
@@ -17,13 +17,13 @@ body {
 .content-container {
     display: flex;
     padding: 20px;
-    height: calc(100vh - 40px); /* Adjust height to fit the screen excluding header */
+    height: calc(100vh - 40px);
     box-sizing: border-box;
 }
 
 .search-container {
     position: fixed;
-    top: 60px; /* Adjust based on your header height */
+    top: 60px;
     left: 20px;
     width: 200px;
     padding: 20px;

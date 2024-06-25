@@ -1,18 +1,16 @@
 import plotly.express as px
 
-# Create a plotly figure for Washington State map
+# WA state
 fig = px.scatter_mapbox(lat=[47.7511], lon=[-120.7401], zoom=7)
 
-# Update layout for better aesthetics and details
 fig.update_layout(
-    mapbox_style="carto-positron",  # Choose mapbox style for details like roads and addresses
-    mapbox_zoom=7,  # Adjust zoom level
-    mapbox_center={"lat": 47.7511, "lon": -120.7401},  # Center the map on Washington State
-    margin={"r":0,"t":0,"l":0,"b":0},  # Remove unnecessary margins
-    showlegend=False,  # Hide legend
+    mapbox_style="carto-positron",  # mapbox style, need to change potentially
+    mapbox_zoom=7,
+    mapbox_center={"lat": 47, "lon": -120},  # center on WA
+    margin={"r":0,"t":0,"l":0,"b":0}, 
+    showlegend=False, 
 )
 
-# Update mapbox layers for road and address details
 fig.update_layout(
     mapbox_layers=[
         {
@@ -25,5 +23,4 @@ fig.update_layout(
         }
       ])
 
-# Show the plot
 fig.show()

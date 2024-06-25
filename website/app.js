@@ -74,7 +74,7 @@ app.get('/', (req, res) => {
             return;
         }
 
-        // Pass API key as a string to the index template
+        // API
         res.render('index', { rentals: rows, apiKey: process.env.GOOGLE_MAPS_API_KEY });
     });
 });
