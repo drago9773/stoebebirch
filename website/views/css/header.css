@@ -1,0 +1,115 @@
+body {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden; /* Hide overflow to prevent scrolling beyond viewport */
+}
+
+.header {
+    width: 100%;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #ddd;
+}
+
+.content-container {
+    display: flex;
+    padding: 20px;
+    height: calc(100vh - 40px); /* Adjust height to fit the screen excluding header */
+    box-sizing: border-box;
+}
+
+.search-container {
+    position: fixed;
+    top: 60px; /* Adjust based on your header height */
+    left: 20px;
+    width: 200px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.search-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.search-container input,
+.search-container button {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.search-container button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.search-container button:hover {
+    background-color: #0056b3;
+}
+
+.house-container {
+    margin-left: 300px;
+    width: 500px;
+    height: 700px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.house-container::-webkit-scrollbar {
+    width: 10px;
+}
+
+.house-container::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.house-container::-webkit-scrollbar-thumb {
+    background-color: #888; 
+    border-radius: 5px;
+}
+
+.house-container::-webkit-scrollbar-thumb:hover {
+    background-color: #555; 
+}
+
+.house-container ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.house-container li {
+    margin-bottom: 20px;
+}
+
+.house-container h5 {
+    margin: 0 0 5px 0;
+}
+
+.house-container p {
+    margin: 0 0 10px 0;
+}
+
+.plot-container {
+    flex: 1;
+    max-height: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

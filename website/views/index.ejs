@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Rental</title>
+    <link rel="stylesheet" href="css/header.css"/>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <header class="header">House Rental</header>
+    <div class="content-container">
+        <div class="search-container">
+            <form id="searchForm" method="GET" action="/search">
+                <input type="text" name="city" placeholder="City...">
+                <input type="text" name="zip_code" placeholder="ZIP Code...">
+                <input type="number" name="min_beds" placeholder="Min Beds">
+                <input type="number" step="0.5" name="min_baths" placeholder="Min Baths">
+                <input type="number" name="min_square_feet" placeholder="Min Square Feet">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+        <div class="house-container">
+            <ul>
+                <% rentals.forEach(rental => { %>
+                    <li id="<%= rental.property_id %>">
+                        <h5><%= rental.address %>, <%= rental.city %>, <%= rental.state %></h5>
+                        <p><%= rental.description.split('. ')[0] %></p>
+                        <p>Bed: <%= rental.max_beds %></p>
+                        <p>Bath: <%= rental.max_baths %></p>
+                        <p>Square Feet: <%= rental.max_square_feet %></p>
+                        <p>Price: $<%= rental.max_rent_price %></p>
+                    </li>
+                <% }); %>
+            </ul>
+        </div>
+        <div class="plot-container">
+            <div id="map-container" style="height: 600px;"></div>
+        </div>
+    </div>
+
+    <!-- Script to load the Plotly map -->
+    <script>
+        // JavaScript code to create Plotly map
+        document.addEventListener('DOMContentLoaded', function () {
+            var fig = {
+                "data": [],
+                "layout": {
+                    "mapbox": {
+                        "style": "carto-positron",
+                        "center": { "lat": 47.7511, "lon": -120.7401 },
+                        "zoom": 7
+                    },
+                    "margin": {"r": 0, "t": 0, "l": 0, "b": 0},
+                    "showlegend": false
+                }
+            };
+
+            Plotly.newPlot('map-container', fig.data, fig.layout);
+        });
+    </script>
+</body>
+</html>
