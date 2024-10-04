@@ -64,7 +64,7 @@ class FeatureSelector:
 if __name__ == "__main__":
     selector = FeatureSelector(
         data_path='path_to_your_training_data.csv',  # Update with your actual data path
-        target_column='Rent',
+        target_column='rent',
         save_path='./'
     )
     selector.run()
@@ -139,7 +139,7 @@ class RentPredictorBase:
             self.benchmark_features.append(column_name)
             if self.mode == 'train':
                 knn = KNeighborsRegressor(n_neighbors=n, metric='haversine')
-                knn.fit(coords_rad, self.data['Rent'])
+                knn.fit(coords_rad, self.data['rent'])
                 joblib.dump(knn, os.path.join(self.save_path, f'knn_model_{n}_neighbors.pkl'))
                 self.knn_models[n] = knn
             else:
@@ -266,7 +266,7 @@ if __name__ == "__main__":
 
     trainer = RentPredictorTrainer(
         data_path='path_to_your_training_data.csv',  # Update with your actual data path
-        target_column='Rent',
+        target_column='rent',
         save_path='./',
         custom_preprocess_funcs={'custom_preprocess': custom_preprocess}
     )
